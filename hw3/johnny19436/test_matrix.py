@@ -32,7 +32,7 @@ def test_multiplication_correctness():
     assert matrices_equal(C_naive, C_mkl)
 
 def test_performance():
-    n = 1000
+    n = 1138
     A = create_matrix(n, n)
     B = create_matrix(n, n)
     
