@@ -35,7 +35,7 @@
 #include <atomic>
 #include <iostream>
 
-#include "_matrix.hpp"
+#include "matrix.hpp"
 
 #ifdef __GNUG__
 #  define PYTHON_WRAPPER_VISIBILITY __attribute__((visibility("hidden")))
@@ -233,9 +233,7 @@ WrapMatrix
 
         mod.def("multiply_mkl", &multiply_mkl);
         mod.def("multiply_naive", &multiply_naive);
-        mod.def("multiply_tile", [](Matrix const & mat1, Matrix const & mat2, size_t lsize){
-            return simple_tile(mat1,mat2, lsize);
-        });
+        mod.def("multiply_tile", &multiply_tile);
 
     }
 
